@@ -1,0 +1,17 @@
+---
+integration_name: com.newrelic.postgresql
+
+instances:
+  - name: Database
+    command: all_data
+    arguments:
+      username: user
+      password: 123
+      database: test
+      collection_list: '["test"]'
+      enable_ssl: false
+      trust_server_certificate: false
+      timeout: 10
+    labels:
+      env: production
+      role: postgresql
