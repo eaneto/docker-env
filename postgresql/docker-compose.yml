@@ -2,17 +2,14 @@ version: '3.3'
 
 services:
   database:
+    container_name: database
     image: postgres:latest
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    expose:
-      - 5432
     environment:
-      - POSTGRES_USER=safexuser
-      - POSTGRES_PASSWORD=safexuser
-      - POSTGRES_DB=SAFEX
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: example
+    ports:
+      - 5432:5432
     networks:
       - postgres-network
 
